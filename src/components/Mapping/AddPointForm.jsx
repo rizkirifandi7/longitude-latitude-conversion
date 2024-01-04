@@ -1,31 +1,11 @@
 import { useState } from "react";
 import { convertDmsToDd, convertDdToDms } from "../../utils/conversionUtils";
 
-// // Convert DMS to DD
-// function convertDmsToDd(dms) {
-// 	const parts = dms.split(" ");
-// 	let degrees = parseFloat(parts[0]);
-// 	let minutes = parseFloat(parts[1]);
-// 	let seconds = parseFloat(parts[2]);
-// 	let direction = parts[3];
-
-// 	let dd = degrees + minutes / 60 + seconds / (60 * 60);
-
-// 	if (direction === "S" || direction === "W") {
-// 		dd = dd * -1;
-// 	} // Negate the result if it is in south or west
-
-// 	return dd;
-// }
-
-// // Convert DD to DMS
-// function convertDdToDms(dd) {
-// 	const deg = Math.floor(dd);
-// 	const minFloat = (dd - deg) * 60;
-// 	const min = Math.floor(minFloat);
-// 	const sec = Math.round((minFloat - min) * 60);
-// 	return `${deg}° ${min}' ${sec}"`;
-// }
+/**
+ * Komponen AddPointForm untuk menambahkan titik ke peta.
+ * @param {Object} props - Properti yang diteruskan ke komponen.
+ * @param {Function} props.onAddToMap - Fungsi yang dipanggil ketika titik ditambahkan ke peta.
+ */
 
 // eslint-disable-next-line react/prop-types
 const AddPointForm = ({ onAddToMap }) => {
@@ -34,6 +14,9 @@ const AddPointForm = ({ onAddToMap }) => {
 	const [longitude, setLongitude] = useState("");
 	const [output, setOutput] = useState("");
 
+	/**
+	 * Menangani konversi koordinat.
+	 */
 	const handleConvert = () => {
 		if (latitude && longitude) {
 			if (tab === "DMS to DD") {
@@ -48,6 +31,9 @@ const AddPointForm = ({ onAddToMap }) => {
 		}
 	};
 
+	/**
+	 * Menangani penambahan titik ke peta.
+	 */
 	const handleAddToMap = () => {
 		if (output) {
 			onAddToMap(parseFloat(output.lat), parseFloat(output.lon));

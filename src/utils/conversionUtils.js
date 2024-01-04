@@ -1,4 +1,8 @@
-// Convert DMS to DD
+/**
+ * Mengonversi koordinat dalam format Degree Minute Second (DMS) ke Decimal Degrees (DD).
+ * @param {string} dms - Koordinat dalam format DMS (misalnya "40 26 46 N").
+ * @returns {number} Koordinat dalam format DD.
+ */
 export function convertDmsToDd(dms) {
 	const parts = dms.split(" ");
 	let degrees = parseFloat(parts[0]);
@@ -15,7 +19,11 @@ export function convertDmsToDd(dms) {
 	return dd;
 }
 
-// Convert DD to DMS
+/**
+ * Mengonversi koordinat dalam format Decimal Degrees (DD) ke Degree Minute Second (DMS).
+ * @param {number} dd - Koordinat dalam format DD.
+ * @returns {string} Koordinat dalam format DMS.
+ */
 export function convertDdToDms(dd) {
 	const deg = Math.floor(dd);
 	const minFloat = (dd - deg) * 60;

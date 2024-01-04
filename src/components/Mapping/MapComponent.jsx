@@ -12,6 +12,14 @@ import Point from "ol/geom/Point";
 import { Icon, Style } from "ol/style";
 import { toLonLat } from "ol/proj";
 
+/**
+ * Komponen MapComponent untuk menampilkan peta dan menangani interaksi peta.
+ * @param {Object} props - Properti yang diteruskan ke komponen.
+ * @param {Function} props.onAddToMap - Fungsi yang dipanggil ketika titik ditambahkan ke peta.
+ * @param {Array} props.targetPoint - Titik target untuk ditampilkan di peta.
+ * @returns {JSX.Element} Elemen JSX yang mewakili komponen peta.
+ */
+
 // eslint-disable-next-line react/prop-types
 const MapComponent = ({ onAddToMap, targetPoint }) => {
 	const mapRef = useRef();
