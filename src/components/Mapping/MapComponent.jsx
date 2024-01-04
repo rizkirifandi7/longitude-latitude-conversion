@@ -58,7 +58,6 @@ const MapComponent = ({ onAddToMap, targetPoint }) => {
 				zoom: 10,
 			});
 
-			// Add a new feature for the new point
 			const pointFeature = new Feature({
 				geometry: new Point(fromLonLat([longitude, latitude])),
 			});
