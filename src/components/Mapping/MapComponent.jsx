@@ -11,7 +11,7 @@ import Feature from "ol/Feature";
 import Point from "ol/geom/Point";
 import { Icon, Style } from "ol/style";
 import { toLonLat } from "ol/proj";
-
+	
 /**
  * Komponen MapComponent untuk menampilkan peta dan menangani interaksi peta.
  * @param {Object} props - Properti yang diteruskan ke komponen.
@@ -64,7 +64,7 @@ const MapComponent = ({ onAddToMap, targetPoint }) => {
 			pointFeature.setStyle(
 				new Style({
 					image: new Icon({
-						src: "https://openlayers.org/en/latest/examples/data/icon.png", // replace this with the url of your marker image
+						src: "https://openlayers.org/en/latest/examples/data/icon.png", 
 					}),
 				})
 			);
